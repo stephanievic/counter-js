@@ -1,4 +1,3 @@
-
 // passando valor incial para o contador
 let count = 0;
 
@@ -10,7 +9,7 @@ const btns = document.querySelectorAll (".btn");
 btns.forEach (function (btn){
 
     btn.addEventListener ("click", (e) => {
-        
+
         //const styles recebe a classe do botão quando ele é clicado
         const styles = e.currentTarget.classList;
 
@@ -24,7 +23,10 @@ btns.forEach (function (btn){
         else if (styles.contains('decrease')){
             count --;
 
-            value.style.color = "#8f2d2d";
+            if (count < 0){
+                value.style.color = "#8f2d2d";
+            }
+
         }
 
         else if (styles.contains('increase')){
